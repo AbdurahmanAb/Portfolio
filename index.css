@@ -14,16 +14,48 @@ body {
   font-family: "Quicksand", sans-serif;
 }
 
+@media only screen and (max-width: 1100px) {
+  .navbar {
+    height: 12.7rem !important;
+  }
+  .hero {
+    padding-top: 14rem !important;
+  }
+}
+@media only screen and (max-width: 642px) {
+  .hero {
+    font-size: 1.7rem .hero __img;
+  }
+  .about {
+    margin-top: 4rem;
+  }
+  .about__heading {
+    font-size: 1.8rem !important;
+  }
+  .skills {
+    flex-direction: column;
+    margin: 0;
+  }
+  .skills ul {
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .contact,
+  .phone {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
 .navbar {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
   font-size: 1.6rem;
-  align-items: center;
-  justify-content: space-between;
   padding: 1rem;
   z-index: 400;
   width: 100%;
   box-shadow: 0 0.1rem 1rem rgb(95, 95, 97);
-  height: 5.5rem;
+  height: 7rem;
   background-color: #fff;
   position: fixed;
 }
@@ -57,17 +89,20 @@ a {
 .hero {
   z-index: 100;
   padding-top: 6rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
   align-items: center;
   height: 100vh;
-  justify-content: space-evenly;
+}
+.hero__img {
+  text-align: center;
 }
 .hero__heading {
   font-size: 4rem;
 }
 .hero__text {
-  width: 500px;
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 40px;
 }
@@ -116,7 +151,7 @@ a {
   content: "";
   position: absolute;
   left: 0;
-  height: 108%;
+  height: 130%;
   width: 100%;
   background: #fff;
   border-left: 2px solid #fc6d6d;
@@ -151,7 +186,6 @@ a {
 .skills {
   display: flex;
   align-items: center;
-  gap: 40px;
   margin: 2rem;
 }
 .skills ul {
@@ -175,8 +209,8 @@ a {
   justify-items: center;
 }
 .projects__card {
-  height: 34rem;
-  width: 24rem;
+  width: 26rem;
+  padding: 1rem;
   margin: 1rem;
   transition: all;
   transform: scale(0.8);
@@ -184,7 +218,6 @@ a {
 }
 .projects__card:hover {
   transform: scale(0.95);
-  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .card__figure {
@@ -192,6 +225,11 @@ a {
   flex-direction: column;
   align-items: center;
   position: relative;
+}
+.card__caption h2 {
+  background-color: goldenrod;
+  padding: 1rem;
+  color: #f7f7f7;
 }
 .card__list {
   margin: 1rem;
@@ -215,9 +253,6 @@ a {
   justify-content: space-evenly;
   gap: 20px;
   cursor: pointer;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 .card__footer i {
   height: 5rem;
@@ -272,6 +307,93 @@ svg {
 }
 
 .contact {
-  background-color: rgb(195, 104, 29);
-  height: 76vh;
+  padding: 3rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.contact h2 {
+  padding: 1rem;
+}
+
+.card {
+  width: 24.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card__avatar {
+  width: 20rem;
+  height: 20rem;
+  text-align: center;
+}
+.card__avatar figcaption {
+  margin: 1rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.avatar {
+  height: 75%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.social {
+  list-style-type: none;
+  line-height: 3rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.social__item {
+  padding: 1rem;
+}
+.social__item:first-child {
+  background-color: black;
+  color: #fff;
+}
+.social__item:nth-child(2) {
+  background-color: blue;
+  color: #fff;
+}
+.social__item:nth-child(3) {
+  background-color: red;
+  color: #fff;
+}
+.social__item:nth-child(4) {
+  background-color: rgb(41, 119, 229);
+  color: #fff;
+}
+.social__item:nth-child(5) {
+  background-color: #f7f7f7;
+  color: rosybrown;
+}
+.social__item:nth-child(6) {
+  background-color: rgb(31, 110, 236);
+  color: #fff;
+}
+.social__link {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.social__link i {
+  margin-right: 1rem;
+}
+
+.phone {
+  display: flex;
+  align-items: center;
+  background-color: rgb(252, 226, 231);
+  padding: 8rem;
+  -webkit-clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+          clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+}
+.phone .text {
+  font-weight: 500;
+  color: black;
+}
+.phone .adress {
+  align-self: flex-end;
 }/*# sourceMappingURL=index.css.map */
